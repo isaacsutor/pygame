@@ -5,23 +5,28 @@ from pygame.locals import *
 Isaac Sutor
 PyGame Intro
 """
+
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super(Player, self).__init__()
+        # create surface
+        self.surf = pygame.Surface((75, 75))
+        # color surface
+        self.surf.fill((255, 255, 255))
+        self.rect = self.surf.get_rect()
+
+
+# initialize
 pygame.init()
 
-
+# create screen
 screen = pygame.display.set_mode((800, 600))
+
+player = Player()
 
 # Variable to keep main loop running
 running = True
-
-# create surface
-surf = pygame.Surface((50, 50))
-# color surface
-surf.fill((255, 255, 255))
-rect = surf.get_rect()
-
-# draw rect
-screen.blit(surf, (400, 300))
-pygame.display.flip()
 
 # Main Loop
 while running:
@@ -35,4 +40,6 @@ while running:
             elif event.type == pygame.QUIT:
                 running = False
 
-
+    # draw rect
+    screen.blit(player.surf, (400, 300))
+    pygame.display.flip()
