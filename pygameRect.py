@@ -71,6 +71,7 @@ pygame.init()
 
 # create screen
 screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Missile Dodge")
 
 ADDENEMY = pygame.USEREVENT + 1
 pygame.time.set_timer(ADDENEMY, 250)
@@ -83,6 +84,7 @@ player = Player()
 myfont = pygame.font.SysFont("monospace", 16)
 background = pygame.Surface((screen.get_size()))
 background.fill((135, 206, 250))
+endfont = pygame.font.Font(None, 36)
 
 enemies = pygame.sprite.Group()
 clouds = pygame.sprite.Group()
@@ -132,8 +134,21 @@ while running:
     if pygame.sprite.spritecollideany(player, enemies):
         player.kill()
         stopscore = True
-        # highscore = d["key"]
+        # If game over is true, draw game over
+        text = endfont.render("Game Over", True, [0, 0, 0], None)
+        text_rect = text.get_rect()
+        text_x = screen.get_width() / 2 - text_rect.width / 2
+        text_y = screen.get_height() / 2 - text_rect.height / 2
+
+    if stopscore:
+        screen.blit(text, [text_x, text_y])
+        # highscore = d['key']
         # if score > highscore:
-            # d["key"] = score  # thats all, now it is saved on disk.
+            # d['key'] = score  # thats all, now it is saved on disk.
             # d.close()
+            # print(score)
     pygame.display.flip()
+
+
+
+
