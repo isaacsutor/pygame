@@ -79,7 +79,7 @@ pygame.time.set_timer(ADDCLOUD, 1000)
 
 player = Player()
 
-
+myfont = pygame.font.SysFont("monospace", 16)
 background = pygame.Surface((screen.get_size()))
 background.fill((135, 206, 250))
 
@@ -88,7 +88,8 @@ clouds = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_sprites.add(player)
 
-
+score = 0
+stopscore = False
 # Variable to keep main loop running
 running = True
 
@@ -113,6 +114,10 @@ while running:
             clouds.add(new_cloud)
 
     screen.blit(background, (0, 0))
+    scoretext = myfont.render("Score {0}".format(score), 1, (0, 0, 0))
+    screen.blit(scoretext, (5, 10))
+    if not stopscore:
+        score += 1
     pressed_keys = pygame.key.get_pressed()
     player.update(pressed_keys)
     enemies.update()
@@ -122,5 +127,7 @@ while running:
 
     if pygame.sprite.spritecollideany(player, enemies):
         player.kill()
+        stopscore = True
+
 
     pygame.display.flip()
