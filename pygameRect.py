@@ -12,10 +12,10 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super(Player, self).__init__()
         # create surface
-        self.surf = pygame.Surface((75, 25))
+        self.image = pygame.image.load('jet.png').convert()
         # color surface
-        self.surf.fill((255, 255, 255))
-        self.rect = self.surf.get_rect()
+        self.image.set_colorkey((255, 255, 255), pygame.RLEACCEL)
+        self.rect = self.image.get_rect()
 
     def update(self, pressed_keys):
         if pressed_keys[pygame.K_UP]:
@@ -41,9 +41,9 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super(Enemy, self).__init__()
-        self.surf = pygame.Surface((20, 10))
-        self.surf.fill((255, 255, 255))
-        self.rect = self.surf.get_rect(center=(random.randint(820, 900), random.randint(0, 600)))
+        self.image = pygame.image.load('missile.png').convert()
+        self.image.set_colorkey((255, 255, 255), pygame.RLEACCEL)
+        self.rect = self.image.get_rect(center=(random.randint(820, 900), random.randint(0, 600)))
         self.speed = random.randint(5, 20)
 
     def update(self):
@@ -94,7 +94,7 @@ while running:
     player.update(pressed_keys)
     enemies.update()
     for entity in all_sprites:
-        screen.blit(entity.surf, entity.rect)
+        screen.blit(entity.image, entity.rect)
 
     if pygame.sprite.spritecollideany(player, enemies):
         player.kill()
