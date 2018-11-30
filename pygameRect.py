@@ -52,6 +52,19 @@ class Enemy(pygame.sprite.Sprite):
             self.kill()
 
 
+class Cloud(pygame.sprite.Sprite):
+    def __init__(self):
+        super(Cloud, self).__init__()
+        self.image = pygame.image.load('cloud.png').convert()
+        self.image.set_colorkey((0, 0, 0), pygame.RLEACCEL)
+        self.rect = self.image.get_rect(center=(random.randint(820, 900), random.randint(0, 600)))
+
+    def update(self):
+        self.rect.move_ip(-5, 0)
+        if self.rect.right < 0:
+            self.kill()
+
+
 # initialize
 pygame.init()
 
@@ -61,15 +74,20 @@ screen = pygame.display.set_mode((800, 600))
 ADDENEMY = pygame.USEREVENT + 1
 pygame.time.set_timer(ADDENEMY, 250)
 
+ADDCLOUD = pygame.USEREVENT + 2
+pygame.time.set_timer(ADDCLOUD, 1000)
+
 player = Player()
 
 
 background = pygame.Surface((screen.get_size()))
-background.fill((0, 0, 0))
+background.fill((135, 206, 250))
 
 enemies = pygame.sprite.Group()
+clouds = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 all_sprites.add(player)
+
 
 # Variable to keep main loop running
 running = True
@@ -89,10 +107,16 @@ while running:
             new_enemy = Enemy()
             enemies.add(new_enemy)
             all_sprites.add(new_enemy)
+        elif event.type == ADDCLOUD:
+            new_cloud = Cloud()
+            all_sprites.add(new_cloud)
+            clouds.add(new_cloud)
+
     screen.blit(background, (0, 0))
     pressed_keys = pygame.key.get_pressed()
     player.update(pressed_keys)
     enemies.update()
+    clouds.update()
     for entity in all_sprites:
         screen.blit(entity.image, entity.rect)
 
