@@ -4,7 +4,7 @@ import random
 
 """
 Isaac Sutor
-PyGame Intro
+Rocket Evasion Game!
 """
 
 
