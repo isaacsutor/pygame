@@ -95,6 +95,7 @@ score = 0
 stopscore = False
 
 d = shelve.open('hiscore')
+highscore = d['key']
 
 # Variable to keep main loop running
 running = True
@@ -122,6 +123,8 @@ while running:
     screen.blit(background, (0, 0))
     scoretext = myfont.render("Score {0}".format(score), 1, (0, 0, 0))
     screen.blit(scoretext, (5, 10))
+    highscoretext = myfont.render("High Score {0}".format(highscore), 1, (0, 0, 0))
+    screen.blit(highscoretext, (5, 20))
     if not stopscore:
         score += 1
     pressed_keys = pygame.key.get_pressed()
@@ -142,7 +145,7 @@ while running:
 
     if stopscore:
         screen.blit(text, [text_x, text_y])
-        highscore = d['key']
+        # highscore = d['key']
         if score > highscore:
             d['key'] = score  # thats all, now it is saved on disk.
             print(score)
