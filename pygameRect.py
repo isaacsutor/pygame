@@ -138,7 +138,7 @@ while running:
         player.kill()
         stopscore = True
         # If game over is true, draw game over
-        text = endfont.render("Game Over", True, [0, 0, 0], None)
+        text = endfont.render("Game Over: Score: " + str(score) + " High Score : " + str(highscore), True, [0, 0, 0], None)
         text_rect = text.get_rect()
         text_x = screen.get_width() / 2 - text_rect.width / 2
         text_y = screen.get_height() / 2 - text_rect.height / 2
