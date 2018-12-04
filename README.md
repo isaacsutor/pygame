@@ -13,11 +13,13 @@ for easy running when the project is complete (1.1.18)
 
 Screenshots
 Screenshots will be in this section by 12/1
+Here is a video of the most up to date version running:
+https://drive.google.com/file/d/13ESKBE7lCBqlB-qd8OcSlvAbIVZUqfRq/view?usp=sharing
 
 
 Things to implement:
 1. Score: displays in top left corner and updates based on time alive //DONE
-2. Death Screen: (Planned Release: 12.1.18)
+2. Death Screen: (Planned Release: 12.1.18) //DONE
  - when lives = 0 and dead -> display "You Died. Final Score: ______" and a replay option below
 3. High Score: (Planned Release: 12.3.18) //DONE
  - save highest score in file and display on top of screen
