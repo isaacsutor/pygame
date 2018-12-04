@@ -19,7 +19,7 @@ Things to implement:
 1. Score: displays in top left corner and updates based on time alive //DONE
 2. Death Screen: (Planned Release: 12.1.18)
  - when lives = 0 and dead -> display "You Died. Final Score: ______" and a replay option below
-3. High Score: (Planned Release: 12.3.18)
+3. High Score: (Planned Release: 12.3.18) //DONE
  - save highest score in file and display on top of screen
 4. Lives: (Planned release: 12.8.18)
   - jet image in the bottom left corner next to score with "xnum" where num is the number of lives left
