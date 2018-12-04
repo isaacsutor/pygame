@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 import random
-# import shelve
+import shelve
 
 """
 Isaac Sutor
@@ -94,7 +94,7 @@ all_sprites.add(player)
 score = 0
 stopscore = False
 
-# d = shelve.open('hscore.txt')
+d = shelve.open('hiscore')
 
 # Variable to keep main loop running
 running = True
@@ -142,12 +142,14 @@ while running:
 
     if stopscore:
         screen.blit(text, [text_x, text_y])
-        # highscore = d['key']
-        # if score > highscore:
-            # d['key'] = score  # thats all, now it is saved on disk.
-            # d.close()
-            # print(score)
+        highscore = d['key']
+        if score > highscore:
+            d['key'] = score  # thats all, now it is saved on disk.
+            print(score)
     pygame.display.flip()
+
+
+d.close()
 
 
 
