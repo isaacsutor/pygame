@@ -9,10 +9,10 @@ Features
 
 Running
 I will be creating an .exe file with the latest working release 
-for easy running when the project is complete (1.1.18)
+for easy running when the project is complete (1.30.19)
 
 Screenshots
-Screenshots will be in this section by 12/1
+Screenshots will be in this section by 1.30.19
 Here is a video of the most up to date version running:
 https://drive.google.com/file/d/13ESKBE7lCBqlB-qd8OcSlvAbIVZUqfRq/view?usp=sharing
 
@@ -23,17 +23,17 @@ Things to implement:
  - when lives = 0 and dead -> display "You Died. Final Score: ______" and a replay option below
 3. High Score: (Planned Release: 12.3.18) //DONE
  - save highest score in file and display on top of screen
-4. Lives: (Planned release: 12.8.18)
+4. Lives: (Planned release: 1.8.19)
   - jet image in the bottom left corner next to score with "xnum" where num is the number of lives left
   - upgrade packages that float like clouds, giving more lives
-5. Increased Difficulty: (Planned release: 12.10.18)
+5. Increased Difficulty: (Planned release: 1.10.19)
  - rockets increase in speed and frequency over time
-6. Main Menu: (Planned Release: 12.20.18)
+6. Main Menu: (Planned Release: 1.20.19)
  - menu that gives play, high scores, and exit button
-7. Unlockables: (Planned Release: 1.1.19)
+7. Unlockables: (Planned Release: 2.1.19)
   - jets: mutiple colors and styles
   - night time mode?
-8. Executable file (Planned Release: 1.1.18)
+8. Executable file (Planned Release: 2.10.19)
 
 
 Notes
