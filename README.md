@@ -9,7 +9,7 @@ Features
 
 Running
 I will be creating an .exe file with the latest working release 
-for easy running when the project is complete (1.30.19)
+for easy running when the project is complete (TBD)
 
 Screenshots
 Screenshots will be in this section by 1.30.19
@@ -23,17 +23,17 @@ Things to implement:
  - when lives = 0 and dead -> display "You Died. Final Score: ______" and a replay option below
 3. High Score: (Planned Release: 12.3.18) //DONE
  - save highest score in file and display on top of screen
-4. Lives: (Planned release: 1.8.19)
+4. Lives: (Planned release: TBD)
   - jet image in the bottom left corner next to score with "xnum" where num is the number of lives left
   - upgrade packages that float like clouds, giving more lives
-5. Increased Difficulty: (Planned release: 1.10.19)
+5. Increased Difficulty: (Planned release: TBD)
  - rockets increase in speed and frequency over time
-6. Main Menu: (Planned Release: 1.20.19)
+6. Main Menu: (Planned Release: TBD)
  - menu that gives play, high scores, and exit button
-7. Unlockables: (Planned Release: 2.1.19)
+7. Unlockables: (Planned Release: TBD)
   - jets: mutiple colors and styles
   - night time mode?
-8. Executable file (Planned Release: 2.10.19)
+8. Executable file (Planned Release: TBD)
 
 
 Notes
